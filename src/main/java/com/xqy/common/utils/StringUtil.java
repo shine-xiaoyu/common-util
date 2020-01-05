@@ -75,6 +75,17 @@ public class StringUtil {
 		}
 		return false;
 	}
+	
+	public static boolean isNumber(String str) {
+		String regex = "\\d{1,}";
+		if (regex.matches(str)) {
+			return true;
+		}
+		return false;
+	}
+	
+	
+	
 	/**
 	 * @Title: getRandomAzChar   
 	 * @Description: 获取随机字符（a-z）   
