@@ -25,6 +25,18 @@ public class StringUtil {
 		return false;
 	}
 	/**
+	 * @Title: isBlank   
+	 * @Description: 判断字符串是否为空  
+	 * @param: @param str
+	 * @param: @return      
+	 * @return: boolean      
+	 * @throws
+	 */
+	public static boolean isNull(String str) {
+		
+		return isBlank(str);
+	}
+	/**
 	 * @Title: isNotBlank   
 	 * @Description: 字符串内容不为空，返回true   
 	 * @param: @param str
