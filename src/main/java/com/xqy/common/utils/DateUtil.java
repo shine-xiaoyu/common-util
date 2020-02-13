@@ -235,4 +235,26 @@ public class DateUtil {
 		Date theDate = dateFormat.parse("2019-12-20");
 		System.out.println(isInWeek(theDate));
 	}
+	
+    /**
+     * 
+     * @Title: randomDate 
+     * @Description: 随机返回一个在start--end 之间的日期
+     * @param start
+     * @param end
+     * @return
+     * @return: Date
+     */
+	public static Date randomDate(Date start,Date end) {
+		//获取开始日期的毫秒数
+		long t1 = start.getTime();
+		//获取结束日期的毫秒数
+		long t2 = end.getTime();
+		
+		long t =(long) ((Math.random() * (t2-t1)+1) +t1);
+		
+		return new Date(t);
+	}
+	
+	
 }
