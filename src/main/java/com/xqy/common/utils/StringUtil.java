@@ -3,6 +3,8 @@ package com.xqy.common.utils;
 import java.io.UnsupportedEncodingException;
 import java.util.Random;
 
+import com.sun.source.tree.DoWhileLoopTree;
+
 public class StringUtil {
 	/**
 	 * @Title: isBlank   
@@ -149,6 +151,35 @@ public class StringUtil {
 		char newChar = (char)(startChar+random.nextInt(10));
 		return newChar;
 	}
+	
+	/**
+	 * 随机返回手机号
+	 * @return
+	 */
+	public static String getRandomPhoneNum() {
+		String tel = null;
+		boolean flag = true;
+		do {
+			tel ="1";
+			for (int i = 0; i < 10; i++) {
+				tel+=getRandomNumberChar();
+			}
+			if (isPhoneNum(tel)) {
+				flag = false;
+			}
+		} while (flag);
+		return tel;
+		
+	}
+	
+	public static void main(String[] args) {
+//		getRandomPhoneNum();
+//		System.out.println(getRandomPhoneNum());
+//		System.out.println(isPhoneNum("15047339301"));
+		System.out.println(getRandomSex());
+	}
+	
+	
 	/**
 	 * @Title: getRandomLetterAndNumberStr   
 	 * @Description: 获得随机字符串（a-z0-9）   
@@ -210,6 +241,17 @@ public class StringUtil {
 
 		return str;
 	}
+	
+	/**
+	 * 随机返回性别
+	 * @return
+	 */
+	public static String getRandomSex() {
+		String[] sex= {"男","女"};
+		return sex[RandomUtil.random(0, sex.length - 1)];
+	}
+	
+	
 	/**
 	 * @Title: randomChineseName   
 	 * @Description: 返回中文姓名，必须以真实姓开头
@@ -278,9 +320,6 @@ public class StringUtil {
         return  str.matches(regex);	
 	}
 	
-	public static void main(String[] args) {
-		boolean httpUrl = isHttpUrl("https://127.0.0.1/a.html");
-		System.out.println(httpUrl);
-	}
+	
 	
 }
